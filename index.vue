@@ -36,6 +36,9 @@ export default {
                     done: 0
                 });
                 this.input_task = "";
+            })
+            .catch((error) => {
+                console.error(error);
             });
         },
         readAll() {
@@ -48,20 +51,25 @@ export default {
                             done: data[2]
                         })
                     });
+                })
+                .catch((error) => {
+                    console.error(error);
                 });
         },
         update(item) {
             axios.put("http://localhost:5000/task",{_id: item._id, done: item.done})
-                .then((response) => {
-                    console.log(response.data)
+                .catch((error) => {
+                    console.error(error);
                 });
         },
         remove(item, index) {
             axios.delete("http://localhost:5000/task",{params: {_id: item._id}})
-                .then((response) => {
-                    console.log(response.data)
+                .then(() => {
+                    this.tasks.splice(index,1);
+                })
+                .catch((error) => {
+                    console.error(error);
                 });
-            this.tasks.splice(index,1);
         }
     }
 }
