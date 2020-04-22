@@ -1,4 +1,4 @@
-to do app
+TODOAPP
 =========
 ## python+flask+mysql+vue
 * install python
