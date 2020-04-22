@@ -24,9 +24,6 @@ export default {
     created() {
         this.readAll();
     },
-    destroyed() {
-        axios.delete("http://localhost:5000/exit")
-    },
     methods: {
         create(item) {
             if(!item) return;
