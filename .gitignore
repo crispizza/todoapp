@@ -1,0 +1,9 @@
+# build
+dist
+dist/*
+# pakages
+node_modules
+# python
+__pycache__
+# ide plugin
+.idea
