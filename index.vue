@@ -15,12 +15,10 @@ div
 <script>
 import axios from "axios";
 export default {
-    data() {
-        return {
-            input_task: "",
-            tasks:[]
-        }
-    },
+    data: () => ({
+        input_task: "",
+        tasks:[]
+    }),
     created() {
         this.readAll();
     },
@@ -43,15 +41,15 @@ export default {
         },
         readAll() {
             axios.get("http://localhost:5000/task")
-                .then((response) => {
-                    response.data.forEach((data) => {
+                .then((response) =>
+                    response.data.forEach((data) =>
                         this.tasks.push({
                             _id: data[0],
                             task: data[1],
                             done: data[2]
                         })
-                    });
-                })
+                    )
+                )
                 .catch((error) => {
                     console.error(error);
                 });
