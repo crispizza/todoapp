@@ -25,9 +25,9 @@ CORS(app)
 
 # init db
 testdb = pymysql.connect(
-    user="root",
+    user="admin",
     password="1234",
-    host="localhost",
+    host="0.0.0.0",
     db="testdb",
     charset="utf8"
 )

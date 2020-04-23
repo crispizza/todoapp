@@ -1,8 +1,11 @@
 {
   "name": "PythonFlaskVue_Todoapp",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "pug-plain-loader": "^1.0.0"
+  },
   "devDependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "pug": "^2.0.4"
   }
 }
