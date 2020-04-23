@@ -29,7 +29,7 @@ export default {
             .then((response) => {
                 const data = response.data
                 this.tasks.push({
-                    _id: data[0][0],
+                    _id: data["LAST_INSERT_ID()"],
                     task: this.input_task,
                     done: 0
                 });
@@ -44,9 +44,9 @@ export default {
                 .then((response) =>
                     response.data.forEach((data) =>
                         this.tasks.push({
-                            _id: data[0],
-                            task: data[1],
-                            done: data[2]
+                            _id: data._id,
+                            task: data.task,
+                            done: data.done
                         })
                     )
                 )

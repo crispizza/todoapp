@@ -31,7 +31,7 @@ testdb = pymysql.connect(
     db="testdb",
     charset="utf8"
 )
-cursor = testdb.cursor()
+cursor = testdb.cursor(pymysql.cursors.DictCursor)
 
 
 # REST API
@@ -49,7 +49,7 @@ class TaskAPI(Resource):
             sql = "SELECT LAST_INSERT_ID();"
             cursor.execute(sql)
             response = cursor.fetchall()
-            return jsonify(response)
+            return jsonify(response[0])
         except Exception as error:
             return {"status": error}
 
