@@ -2,6 +2,9 @@
 dist/
 # pakages
 node_modules/
+package-lock.json
+package.json
+yarn.lock
 # python
 __pycache__/
 # ide plugin
